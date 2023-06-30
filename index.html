@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>First Site</title>
+  <style>
+    body {
+      background-color: lavender;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    h1 {
+      color: blue;
+      margin-top: 0;
+    }
+
+    .input-container {
+      margin-bottom: 20px;
+    }
+
+    .input-container label {
+      display: block;
+      margin-bottom: 5px;
+      color: blue;
+    }
+
+    .input-container input[type="text"] {
+      width: 97%;
+      padding: 10px;
+      border: 1px solid blue;
+      border-radius: 5px;
+    }
+
+    .submit-button {
+      background-color: blue;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .submit-button:hover {
+      background-color: navy;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>First Site</h1>
+    <div class="input-container">
+      <label for="name">Input your name:</label>
+      <input type="text" id="name" placeholder="Enter your name">
+    </div>
+    <button class="submit-button" onclick="submitForm()">Submit</button>
+  </div>
+
+  <script>
+    function submitForm() {
+      var name = encodeURIComponent(document.getElementById("name").value);
+      window.location.href = "second.html?name=" + name;
+    }
+  </script>
+</body>
+
+</html>
